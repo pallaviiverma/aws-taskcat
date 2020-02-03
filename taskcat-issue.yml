@@ -1,0 +1,23 @@
+project:
+  name: sharingapplication
+  regions:
+    - ap-southeast-2
+tests:
+  test-scenario-sdim-sharing:
+    template: ./templates/Combined_Sharing_Application.yml
+    parameters:
+      VendorNameParam: xyz
+      BucketAppInstIDTag: xyz
+      BucketCostCodeTag: xyz
+      VendorAccountIDParam: 123
+      SwitchAccountRole: xyz
+      FromDate: "2020-01-01T00:00:00Z"
+      ToDate: "2020-02-29T00:00:00Z"
+      PublicKey: ssh-rsa xyz rsa-key-20191217
+  test-scenario-sagemaker:
+    template: ./templates/sagemaker-cfn.yml
+    parameters:
+      NotebookName: xyz
+      InstanceType: ml.t2.medium
+      InstanceType: 5
+      RepoName: xyz
